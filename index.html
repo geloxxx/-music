@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,125 +10,162 @@
       background-color: #111;
       color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 50px 20px 20px;
       overflow-x: hidden;
       position: relative;
-    }
+    }.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#00ffcc33, #000);
+  animation: pulse 5s infinite;
+  z-index: -1;
+}
 
-    .animated-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(#00ffcc33, #000);
-      animation: pulse 5s infinite;
-      z-index: -1;
-    }
+@keyframes pulse {
+  0%, 100% {
+    background: radial-gradient(#00ffcc33, #000);
+  }
+  50% {
+    background: radial-gradient(#00ffcc88, #000);
+  }
+}
 
-    @keyframes pulse {
-      0%, 100% {
-        background: radial-gradient(#00ffcc33, #000);
-      }
-      50% {
-        background: radial-gradient(#00ffcc88, #000);
-      }
-    }
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
 
-    h1 {
-      font-size: 2em;
-      display: inline-block;
-    }
+h1 span {
+  display: inline-block;
+  animation: glow 1.2s infinite;
+}
 
-    h1 span {
-      display: inline-block;
-      animation: glow 1.2s infinite;
-    }
+h1 span:nth-child(odd) {
+  animation-delay: 0.1s;
+}
 
-    h1 span:nth-child(odd) {
-      animation-delay: 0.1s;
-    }
+h1 span:nth-child(even) {
+  animation-delay: 0.3s;
+}
 
-    h1 span:nth-child(even) {
-      animation-delay: 0.3s;
-    }
+@keyframes glow {
+  0% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc44; }
+  50% { color: #ffffff; text-shadow: 0 0 20px #00ffccaa; }
+  100% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc44; }
+}
 
-    @keyframes glow {
-      0% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc44; }
-      50% { color: #ffffff; text-shadow: 0 0 20px #00ffccaa; }
-      100% { color: #00ffcc; text-shadow: 0 0 5px #00ffcc44; }
-    }
+.gif img {
+  width: 200px;
+  margin: 20px 0;
+}
 
-    .song {
-      background-color: #222;
-      padding: 15px;
-      margin: 15px auto;
-      width: 320px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00ffcc44;
-    }
+.song {
+  display: none;
+  background-color: #222;
+  padding: 15px;
+  margin: 20px auto;
+  width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffcc44;
+}
 
-    h2 {
-      color: #00ffcc;
-    }
+.song.active {
+  display: block;
+}
 
-    iframe {
-      border: none;
-      border-radius: 10px;
-      width: 300px;
-      height: 80px;
-    }
+h2 {
+  color: #00ffcc;
+  font-size: 1.2em;
+}
+
+iframe {
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+  height: 80px;
+}
+
+.subtitle {
+  font-size: 1em;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.controls button {
+  background-color: #00ffcc;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background-color: #00e6b8;
+}
+
   </style>
 </head>
-<body>
-
-  <div class="animated-bg"></div>
-
-  <h1>
-    <span>E</span><span>n</span><span>j</span><span>o</span><span>y</span>
-    <span> </span>
-    <span>t</span><span>h</span><span>e</span>
-    <span> </span>
-    <span>M</span><span>u</span><span>s</span><span>i</span><span>c</span>
-  </h1>
-  <p>SOMERA WEBSITE :</p>
-
-  <!-- Playlist -->
-  <div class="song">
+<body>  <div class="animated-bg"></div>  <h1><span>E</span><span>n</span><span>j</span><span>o</span><span>y</span>
+      <span> </span><span>t</span><span>h</span><span>e</span>
+      <span> </span><span>M</span><span>u</span><span>s</span><span>i</span><span>c</span>
+  </h1>  <div class="subtitle">SOMERA WEBSITE</div>  <div class="gif">
+    <img src="https://i.gifer.com/origin/9d/9d0f84336451fc41e6dbc927f9bdf618_w200.gif" alt="Song GIF">
+  </div>  <!-- Playlist Items -->  <div class="song active">
     <h2>Kanta 1: Wala Kang Katulad</h2>
     <iframe src="https://drive.google.com/file/d/1d2honIvYSusTeLwt_Fjrp3Nuc8N_BaL6/preview"
       allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
-  </div>
-
-  <div class="song">
+  </div>  <div class="song">
     <h2>Kanta 2: Ako Nalang Ulit</h2>
     <iframe src="https://drive.google.com/file/d/1ejVOZn3Ev8RVL-twfaW9-TN4vvI0FW1b/preview"
       allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
-  </div>
-
-  <div class="song">
+  </div>  <div class="song">
     <h2>Kanta 3: Umiiyak ang Puso Ko</h2>
     <iframe src="https://drive.google.com/file/d/1ekeDflKtGuVPD7h46Nvv6FXRErZx3mJ3/preview"
       allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
-  </div>
-
-  <div class="song">
+  </div>  <div class="song">
     <h2>Kanta 4: Nothing Gonna Change</h2>
     <iframe src="https://drive.google.com/file/d/1ewtcIYUUFWhwzb5-08y0frCb610CgpDc/preview"
       allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
-  </div>
-
-  <div class="song">
+  </div>  <div class="song">
     <h2>Kanta 5: On Bended Knee</h2>
     <iframe src="https://drive.google.com/file/d/1f7mDyykhIyzcRhBAOsnnJiteLL8rYLlg/preview"
       allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
-  </div>
-
-  <div class="song">
+  </div>  <div class="song">
     <h2>Kanta 6: Go Beyond by Giomier</h2>
     <iframe src="https://drive.google.com/file/d/11lI2nBdi8uV4s_9-ZFRMxAzCf5X1csl5/preview"
       allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
-  </div>
+  </div>  <!-- Navigation Buttons -->  <div class="controls">
+    <button onclick="prevSong()">Previous</button>
+    <button onclick="nextSong()">Next</button>
+  </div>  <script>
+    const songs = document.querySelectorAll('.song');
+    let current = 0;
 
-</body>
+    function showSong(index) {
+      songs.forEach((song, i) => {
+        song.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSong() {
+      current = (current + 1) % songs.length;
+      showSong(current);
+    }
+
+    function prevSong() {
+      current = (current - 1 + songs.length) % songs.length;
+      showSong(current);
+    }
+  </script></body>
 </html>

@@ -12,14 +12,37 @@
       color: #fff;
       text-align: center;
       padding: 20px;
+      overflow: hidden;
+      position: relative;
     }
+
+    .animated-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(#00ffcc33, #000);
+      animation: pulse 5s infinite;
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        background: radial-gradient(#00ffcc33, #000);
+      }
+      50% {
+        background: radial-gradient(#00ffcc88, #000);
+      }
+    }
+
     h1, h2 {
       color: #00ffcc;
     }
+
     iframe {
       margin-bottom: 20px;
       border-radius: 10px;
     }
+
     .song {
       background-color: #222;
       padding: 15px;
@@ -32,44 +55,52 @@
 </head>
 <body>
 
+  <div class="animated-bg"></div>
+
   <h1>Enjoy the Music</h1>
   <p>SOMERA WEBSITE :</p>
 
-  <!-- Kanta List -->
+  <!-- Playlist -->
   <div class="song">
     <h2>Kanta 1: Wala Kang Katulad</h2>
-    <iframe src="https://drive.google.com/file/d/1d2honIvYSusTeLwt_Fjrp3Nuc8N_BaL6/preview?autoplay=1"
-      width="300" height="80" allow="autoplay" frameborder="0"></iframe>
+    <iframe src="https://drive.google.com/file/d/1d2honIvYSusTeLwt_Fjrp3Nuc8N_BaL6/preview"
+      width="300" height="80" allow="autoplay" frameborder="0"
+      sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 
   <div class="song">
     <h2>Kanta 2: Ako Nalang Ulit</h2>
-    <iframe src="https://drive.google.com/file/d/1ejVOZn3Ev8RVL-twfaW9-TN4vvI0FW1b/preview?autoplay=1"
-      width="300" height="80" allow="autoplay" frameborder="0"></iframe>
+    <iframe src="https://drive.google.com/file/d/1ejVOZn3Ev8RVL-twfaW9-TN4vvI0FW1b/preview"
+      width="300" height="80" allow="autoplay" frameborder="0"
+      sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 
   <div class="song">
     <h2>Kanta 3: Umiiyak ang Puso Ko</h2>
-    <iframe src="https://drive.google.com/file/d/1ekeDflKtGuVPD7h46Nvv6FXRErZx3mJ3/preview?autoplay=1"
-      width="300" height="80" allow="autoplay" frameborder="0"></iframe>
+    <iframe src="https://drive.google.com/file/d/1ekeDflKtGuVPD7h46Nvv6FXRErZx3mJ3/preview"
+      width="300" height="80" allow="autoplay" frameborder="0"
+      sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 
   <div class="song">
     <h2>Kanta 4: Nothing Gonna Change</h2>
-    <iframe src="https://drive.google.com/file/d/1ewtcIYUUFWhwzb5-08y0frCb610CgpDc/preview?autoplay=1"
-      width="300" height="80" allow="autoplay" frameborder="0"></iframe>
+    <iframe src="https://drive.google.com/file/d/1ewtcIYUUFWhwzb5-08y0frCb610CgpDc/preview"
+      width="300" height="80" allow="autoplay" frameborder="0"
+      sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 
   <div class="song">
     <h2>Kanta 5: On Bended Knee</h2>
-    <iframe src="https://drive.google.com/file/d/1f7mDyykhIyzcRhBAOsnnJiteLL8rYLlg/preview?autoplay=1"
-      width="300" height="80" allow="autoplay" frameborder="0"></iframe>
+    <iframe src="https://drive.google.com/file/d/1f7mDyykhIyzcRhBAOsnnJiteLL8rYLlg/preview"
+      width="300" height="80" allow="autoplay" frameborder="0"
+      sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 
   <div class="song">
     <h2>Kanta 6: Go Beyond by Giomier</h2>
-    <iframe src="https://drive.google.com/file/d/11lI2nBdi8uV4s_9-ZFRMxAzCf5X1csl5/preview?autoplay=1"
-      width="300" height="80" allow="autoplay" frameborder="0"></iframe>
+    <iframe src="https://drive.google.com/file/d/11lI2nBdi8uV4s_9-ZFRMxAzCf5X1csl5/preview"
+      width="300" height="80" allow="autoplay" frameborder="0"
+      sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 
 </body>
